@@ -27,6 +27,14 @@ document.querySelectorAll(".faq-tag").forEach(function (faq) {
   });
 });
 
+function showButton() {
+  const buttonElement = document.querySelector(".button");
+  buttonElement.style.visibility = "visible";
+  buttonElement.style.opacity = "1";
+}
+
+setTimeout(showButton, 40000);
+
 function handleFormSubmission() {
   emailjs.init("wZm83g8b4W-PGdkln");
 
