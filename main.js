@@ -1,3 +1,27 @@
+document.addEventListener("scroll", function () {
+  var contactSection = document.getElementById("contactSection");
+  var scrollPosition = window.innerHeight + window.scrollY;
+  var sectionBottom = contactSection.offsetTop + contactSection.offsetHeight;
+
+  if (scrollPosition >= sectionBottom) {
+    contactSection.style.bottom = "0";
+  } else {
+    contactSection.style.bottom = "-50px";
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var video = document.getElementById("youtubeVideo");
+  var helpButton = document.getElementById("helpButton");
+
+  helpButton.addEventListener("click", function () {
+    video.contentWindow.postMessage(
+      '{"event":"command","func":"pauseVideo","args":""}',
+      "*"
+    );
+  });
+});
+
 let slideIndex = 0;
 const slides = document.querySelectorAll(".slide");
 
@@ -33,7 +57,7 @@ function showButton() {
   buttonElement.style.opacity = "1";
 }
 
-setTimeout(showButton, 40000);
+setTimeout(showButton, 10000);
 
 function handleFormSubmission() {
   emailjs.init("wZm83g8b4W-PGdkln");

@@ -33,13 +33,14 @@ h1 {
 }
 .contact-section {
   position: fixed;
-  bottom: 0;
+  bottom: -50px;
   width: 100%;
   background-image: linear-gradient(to right, #004d00, #9d0000, #a6a600);
   text-align: center;
   color: #fff;
   padding: 3px 0;
   z-index: 999;
+  transition: bottom 1s ease;
 }
 .contact-section a img {
   margin: 7px 15px;
@@ -86,7 +87,7 @@ iframe {
   transform: translateX(-50%);
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 10s ease-in-out;
+  transition: visibility 0s, opacity 15s ease-in-out;
   z-index: 999;
 }
 .button button {
