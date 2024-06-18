@@ -59,6 +59,26 @@ function showButton() {
 
 setTimeout(showButton, 10000);
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Selecionar todos os cartões e botões
+  const cards = document.querySelectorAll(".card");
+  const buttons = document.querySelectorAll(".card button");
+  const headers = document.querySelectorAll(".card-header");
+
+  // Adicionar evento de clique aos botões e cabeçalhos
+  cards.forEach((card) => {
+    const header = card.querySelector(".card-header");
+    const button = card.querySelector("button");
+
+    const toggleDetails = () => {
+      card.classList.toggle("expanded");
+    };
+
+    header.addEventListener("click", toggleDetails);
+    button.addEventListener("click", toggleDetails);
+  });
+});
+
 function handleFormSubmission() {
   emailjs.init("wZm83g8b4W-PGdkln");
 
